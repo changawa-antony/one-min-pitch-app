@@ -4,12 +4,27 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        {% if title %}
+        <title> {{ title }}</title>
+        {% else %}
+        <title> One minute pitch</title>
+        {% endif %}
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="{{url_for('static', filename = 'CSS/bootstrap.min.css')}}">
     </head>
     <body>
+        <!-- Content block -->
+        {% extends 'bootstrap/base.html'%}
+        <!-- Navbar block  --> 
+        {% block navbar %}
+            {% include 'navbar.html' %}
+        {% endblock %}
+
+       
+        {% block content %}
+
+        {% endblock%}
         
         
         <script src="" async defer></script>
