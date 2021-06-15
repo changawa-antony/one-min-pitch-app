@@ -1,7 +1,40 @@
-<div class="container">
-    <div class="post">
-        <div class="video">
+{% extends 'base.html'%}
+
+<!-- Content block -->
+{% block content %}
+<div class="container text-center bg-warning post-wrapper" style="padding: 20px;">
+
+    <div class="video-container">
+        <iframe width="800" height="475" src="https://www.youtube.com/embed/P2LwuF7zn9c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <hr>
+        <caption>
+            Sample post on one minute pitch
+        </caption>
+
+    </div>
+
+    
+
+    <div class="votes-wrapper" style="padding: 10px;">
+        <div class="row">
+
+            <div class="col-2 other">
+                <button type="button" class="btn btn-info">Upvote</button>
+            </div>
             
+            <div class="col-2 other">
+                <button type="button" class="btn btn-danger">Downvote</button>
+            </div>
+        
+            <div class="col-2 votes">
+                <div class="value">
+                    <p><span>{{ votes }}</span> votes</p>
+                </div>
+            </div>
+        
         </div>
     </div>
+     
 </div>
+
+{% endblock%}
