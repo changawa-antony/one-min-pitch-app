@@ -2,10 +2,12 @@ from flask import Flask
 from flask import render_template
 from .forms import ReviewForm
 from . import Blueprint
-import app
+from . import main
+
+from flask import app
 
 # Views
-@app.route('/')
+@main.route('/')
 def index():
     
     '''
@@ -16,7 +18,7 @@ def index():
     title = "One min pitch"
     return render_template('index.html', title = title)
 
-@app.route('/login')
+@main.route('/login')
 def login():
     
     '''
@@ -27,7 +29,7 @@ def login():
     title = "One min pitch"
     return render_template('login.html', title = title)
 
-@app.route('/post')
+@main.route('/post')
 def post():
     
     '''
